@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="port.css" />
+    <link rel="stylesheet" href="color-1.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- -----header------->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="logo">
+            <a href="portfoliohome.html">v</a>
+          </div>
+          <div class="hamburger outer-shadow hover-in-shadow">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- -------header end---- -->
+
+    <!-- ------navbar menu------ -->
+    <nav class="nav-menu">
+      <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
+      <div class="nav-menu-inner">
+        <ul>
+          <li>
+            <a
+              href="portfoliohome.html"
+              class="link-item outer-shadow hover-in-shadow"
+              >home</a
+            >
+          </li>
+          <li>
+            <a href="about.html" class="link-item outer-shadow hover-in-shadow"
+              >about</a
+            >
+          </li>
+          <li>
+            <a href="education.html" class="inner-shadow active">education</a>
+          </li>
+          <li>
+            <a
+              href="project.html"
+              class="link-item outer-shadow hover-in-shadow"
+              >projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="link-item outer-shadow hover-in-shadow"
+              >contact</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- -----copyright text----- -->
+      <p class="copyright">&copy; 2021 My Portfolio</p>
+    </nav>
+
+    <section class="about-section section" id="about">
+      <div class="container">
+        <!--education start -->
+        <div class="row">
+          <div class="education tab-content">
+            <div class="row">
+              <div class="timeline">
+                <div class="row">
+                  <!-- timeline item start -->
+                  <div class="timeline-item outer-shadow">
+                    <div class="timeline-item-inner">
+                      <i class="fas fa-graduation-cap icon"></i>
+                      <span>Pursuing</span>
+                      <hr class="joint" />
+                      <h3>Graduation</h3>
+                      <h4>expected year of completion- 2022</h4>
+                      <p>
+                        I am pursuing BCA(IT) from Mata Sundri Khalsa Girls
+                        College Nissing(karnal) and trying to brought my career
+                        as a Web Developer
+                      </p>
+                    </div>
+                  </div>
+                  <!-- timeline item end -->
+
+                  <!-- timeline item start -->
+                  <div class="timeline-item outer-shadow">
+                    <div class="timeline-item-inner">
+                      <i class="fas fa-graduation-cap icon"></i>
+                      <span>2018-19</span>
+                      <hr class="joint-mid" />
+                      <h3>12th CBSE</h3>
+                      <h4>90 %</h4>
+                      <p>
+                        I have completed my 12th in 2019 from Little Angel
+                        Public Senior Secondary School Alawala(Karnal) and
+                        finally found my interest in designing for higher
+                        studies.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- timeline item end -->
+
+                  <!-- timeline item start -->
+                  <div class="timeline-item outer-shadow">
+                    <div class="timeline-item-inner">
+                      <i class="fas fa-graduation-cap icon"></i>
+                      <span>2016-17</span>
+                      <hr class="joint" />
+                      <h3>10th CBSE</h3>
+                      <h4>(10 CGPA)</h4>
+                      <p>
+                        I have completed my 10th in 2017 from Little Angel
+                        Public Senior Secondary School Alawala(Karnal) and found
+                        my need and interest for further studies.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- timeline item end -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- education end -->
+      </div>
+    </section>
+
+    <div class="style-switcher">
+      <div class="day-night s-icon outer-shadow hover-in-shadow">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+
+    <style>
+                                .education{
+                                              display: block;
+                                }
+                                  @media (max-width: 540px){
+                               .about-section .tab-content {
+                                  flex: 0 0 100%;
+                                  max-width: 100%;
+                                  display: block;
+                                  padding: 0;
+                                  padding-top: 110px;
+                                }
+                              }
+    </style>
+
+    <script>
+      (() => {
+        const hamburger = document.querySelector(".hamburger");
+        const navmenu = document.querySelector(".nav-menu");
+        const closenav = navmenu.querySelector(".close-nav-menu");
+
+        hamburger.addEventListener("click", showNavMenu);
+        closenav.addEventListener("click", hideNavMenu);
+        function showNavMenu() {
+          navmenu.classList.add("open");
+        }
+        function hideNavMenu() {
+          navmenu.classList.remove("open");
+        }
+
+        document.addEventListener("click", (event) => {
+          if (event.target.classList.contains("link-item")) {
+            if (event.target.hash !== "") {
+              event.preventDefault();
+              const hash = event.target.hash;
+              document.querySelector(".section.active").classList.add("hide");
+              document
+                .querySelector(".section.active")
+                .classList.remove("active");
+
+              document.querySelector(hash).classList.add("active");
+              document.querySelector(hash).classList.remove("hide");
+
+              // navmenu.querySelector(".active").classList.add("outer-shadow","hover-in-shadow");
+              // navmenu.querySelector(".active").classList.remove("active","inner-shadow");
+
+              // event.target.classList.add("active","inner-shadow");
+              // event.target.classList.remove("outer-shadow","hover-in-shadow");
+              // hideNavMenu();
+            }
+          }
+        });
+      })();
+
+     // -------------theme light and dark mode-------------------------
+
+const dayNight = document.querySelector(".day-night");
+
+dayNight.addEventListener("click", () =>{
+
+document.body.classList.toggle("dark");
+  if(document.body.classList.contains("dark")){
+     localStorage.setItem("theme","dark");
+  }
+  else{
+       localStorage.setItem("theme","light");    
+  }
+  updateIcon();
+})
+
+function themeMode(){
+       //checking if 'theme' key exists
+       if(localStorage.getItem("theme") != null){
+         if(localStorage.getItem("theme") === "light"){
+           document.body.classList.remove("dark");     
+         }
+         else{
+           document.body.classList.add("dark");     
+         }
+       }
+       updateIcon();
+}
+themeMode();
+
+function updateIcon(){
+       if(document.body.classList.contains("dark")){
+                     dayNight.querySelector("i").classList.remove("fa-moon");
+
+                     dayNight.querySelector("i").classList.add("fa-sun");
+
+        }
+       else{
+             
+              dayNight.querySelector("i").classList.remove("fa-sun");
+
+              dayNight.querySelector("i").classList.add("fa-moon");
+
+       }
+}
+
+
+    </script>
+  </body>
+</html>
